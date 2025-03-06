@@ -1,0 +1,194 @@
+/* Modo Claro (Por Defecto) */
+:root {
+    --bg-color: #f4f4f4;
+    --text-color: #000000;
+    --primary-color: #007bff;
+    --table-bg: #ffffff;
+    --table-border: #ddd;
+}
+
+/* Modo Oscuro */
+.dark-mode {
+    --bg-color: #1a1a1a;
+    --text-color: #f5f5f5;
+    --primary-color: #00bfff;
+    --table-bg: #2a2a2a;
+    --table-border: #555;
+}
+
+body {
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+h1 {
+    color: var(--text-color);
+    text-align: center;
+    margin: 20px 0;
+}
+
+h2{
+    color: var(--text-color);
+    text-align: center;
+    margin: 20px 0;
+}
+
+p {
+    color: var(--text-color);
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 20px 0;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: medium;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    border: 3px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 5px;
+}
+
+.foto-perfil {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Contenedor flexible */
+.flex-container {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: auto;
+    padding: 20px;
+}
+
+.box {
+    max-width: 200px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 18px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Botones */
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--bg-color);
+}
+
+/* Tabla */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: var(--table-bg);
+    border: 1px solid var(--table-border);
+    overflow-x: auto;
+}
+
+/* Contenedor de la tabla para hacerla desplazable en pantallas pequeñas */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Estilos para celdas */
+th, td {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid var(--table-border);
+}
+
+th {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+tr:hover {
+    background-color: coral;
+}
+
+ul{
+    text-align: center;    
+}
+
+ul.list-Cer{
+    list-style-position: inside;
+    list-style-type:disc;
+
+}
+
+ul.list-Tec{
+    list-style-position: inside;
+}
+
+/* Ajustes de ancho para las columnas en pantallas grandes */
+td:nth-child(1), th:nth-child(1) { width: 25%; } /* Nombre */
+td:nth-child(2), th:nth-child(2) { width: 35%; } /* Lenguajes */
+td:nth-child(3), th:nth-child(3) { width: 40%; } /* Enlaces */
+
+/* --- RESPONSIVE DESIGN --- */
+
+/* Ajustes para tablets y pantallas medianas */
+@media screen and (max-width: 768px) {
+    table {
+        width: 100%;
+    }
+
+    th, td {
+        font-size: 14px;
+        padding: 8px;
+    }
+}
+
+/* Ajustes para móviles (se convierte en formato bloque) */
+@media screen and (max-width: 480px) {
+    .table-container {
+        overflow-x: auto;
+        padding: 10px;
+    }
+
+    table {
+        min-width: 100%;
+        display: block;
+    }
+
+    th, td {
+        display: block;
+        width: 100%;
+        text-align: left;
+    }
+
+    th {
+        background-color: var(--primary-color);
+        color: white;
+        text-align: center;
+    }
+}
